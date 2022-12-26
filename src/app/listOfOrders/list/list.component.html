@@ -1,1 +1,58 @@
-<p>list works!</p>
+<table>
+    <td>
+        <mat-form-field> class="filterStyle">
+            <mat-label>Wyszukaj</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Wyszukaj" #input />
+        </mat-form-field>
+    </td>
+
+    <td>
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+    </td>
+</table>
+
+<div class="table">
+    <table mat-table [dataSource]="dataSource">
+
+        <!-- Kolumna Zamówień -->
+        <ng-container matColumnDef="Zamówienie">
+            <th mat-header-cell *matHeaderCellDef> Zamówienie </th>
+            <td mat-cell *matCellDef="let element"> <b>#{{element.id}}</b>
+                <app-dropdown-button></app-dropdown-button>
+                <app-order-name [orderName]="element.nazwa" [ilosc]="element.ilosc"></app-order-name>
+            </td>
+        </ng-container>
+
+        <!-- Kolumna daty -->
+        <ng-container matColumnDef="Data">
+            <th mat-header-cell *matHeaderCellDef> Data </th>
+            <td mat-cell *matCellDef="let element">
+                <app-data-time-component [dateTransaction]="element.data"></app-data-time-component>
+            </td>
+        </ng-container>
+
+        <!-- Kolumna ceny -->
+        <ng-container matColumnDef="Cena">
+            <th mat-header-cell *matHeaderCellDef> Cena </th>
+            <td mat-cell *matCellDef="let element">
+                <div class="csBold"> {{element.cena|currency:'PLN'}} </div>
+                <div class="csFaktura">Faktura {{element.faktura}}</div>
+            </td>
+        </ng-container>
+
+        <!-- Kolumna Klienta -->
+        <ng-container matColumnDef="Klient">
+            <th mat-header-cell *matHeaderCellDef> Klient </th>
+            <td mat-cell *matCellDef="let element">
+                <div class="csBold">{{element.nabywca.nazwa}} </div>
+                <div class="csMail">{{element.nabywca.mail}} <span class="material-icons">content_copy</span>
+                    <br> {{element.nabywca.telefon}} <span class="material-icons">content_copy</span>
+                </div>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+</div>
