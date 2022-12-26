@@ -9,8 +9,8 @@ import { OrderNameComponent } from './shared/order-name/order-name.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ListComponent,
-    OrderNameComponent
+    ListComponent
+    
   ],
   imports: [
     BrowserModule,

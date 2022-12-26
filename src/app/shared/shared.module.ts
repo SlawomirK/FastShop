@@ -11,15 +11,18 @@ import { OrderNameComponent } from "./order-name/order-name.component";
   imports: [
     CommonModule,
     MaterialsModule],
+
   declarations: [
     DropdownButtonComponent,
     OrderNameComponent,
     DataTimeComponent
+   
   ],
   exports: [
     DropdownButtonComponent,
     OrderNameComponent,
     DataTimeComponent
+    
   ]
 })
 export class sharedModule { }
