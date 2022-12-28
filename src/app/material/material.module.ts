@@ -15,7 +15,8 @@ const MATERIAL_MODULES=[
   MatIconModule,
   MatFormFieldModule,
   MatDividerModule,
-  MatGridListModule  
+  MatGridListModule
+    
 ]
 @NgModule({
   declarations: [],
