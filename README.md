@@ -1,5 +1,5 @@
 # The goal
-Create an angular app module like in a [view mock.jpg](https://github.com/SlawomirK/FastShop/blob/master/mock.jpg)
+Create an angular app module like in a view [mock.jpg](https://github.com/SlawomirK/FastShop/blob/master/mock.jpg)
 
 
 # FastShop
