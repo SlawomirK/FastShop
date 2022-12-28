@@ -1,3 +1,7 @@
+# The goal
+Create an angular app module like in a view ![mock.jpg](https://github.com/SlawomirK/FastShop/blob/master/mock.jpg)
+
+
 # FastShop
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
